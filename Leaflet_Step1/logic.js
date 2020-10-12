@@ -18,7 +18,7 @@ function createFeatures(earthquakeData) {
 
     // Function to determine marker size based on magnitude
     function markerSize(magnitude) {
-        return magnitude * 100;
+        return magnitude * 30000;
     }
 
     function circleColor(magnitude) {
@@ -39,9 +39,9 @@ function createFeatures(earthquakeData) {
     // Create a geoJSON layer containing the features array on the earthquakeData object
     // Run the onEachFeature function once for each piece of data in the array
     var earthquakes = L.geoJSON(earthquakeData, {
-        funtion(earthquakeData, latlng) {
+        pointToLayer: function(earthquakeData, latlng) {
             return L.circle(latlng, {
-                radius: radiusSize(earthquakeData.properties.mag),
+                radius: markerSize(earthquakeData.properties.mag),
                 color: circleColor(earthquakeData.properties.mag),
                 fillOpacity: 0.65
             });
