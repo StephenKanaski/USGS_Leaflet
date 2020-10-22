@@ -18,3 +18,5 @@ Include popups that provide additional information about the earthquake when a m
 Create a legend that will provide context for your map data.
 
 Your visualization should look something like the map above.
+
+**!!** When you run the html code, enter your API_KEY in the pop-up prompt window and press enter to continue **!!**
